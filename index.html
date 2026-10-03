@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta
+        name="description"
+        content="You are warmly invited to celebrate our wedding. Join us for this special occasion filled with love, joy, and beautiful memories."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Invitation">
+    <meta
+        property="og:description"
+        content="Join us as we celebrate our special day."
+    >
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding Invitation">
+    <meta
+        name="twitter:description"
+        content="Join us as we celebrate our special day."
+    >
+    <meta name="twitter:image" content="assets/images/og-image.jpg">
+
+    <title>Wedding Invitation | Our Special Day</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--
+        Background decoration
+        Decorative elements are hidden from screen readers.
+    -->
+    <div class="bg-gradient" aria-hidden="true"></div>
+
+    <!-- Floral frame -->
+    <img
+        src="assets/images/floral-frame.png"
+        alt=""
+        class="frame-top"
+        aria-hidden="true"
+    >
+
+    <img
+        src="assets/images/floral-frame.png"
+        alt=""
+        class="frame-bottom"
+        aria-hidden="true"
+    >
+
+
+    <!-- =========================================================
+         HERO SECTION
+         ========================================================= -->
+    <main>
+
+        <section class="hero" aria-labelledby="couple-names">
+
+            <h1 id="couple-names" class="couple-names animate">
+                Groom Name
+                <span aria-hidden="true">❤️</span>
+                Bride Name
+            </h1>
+
+            <p class="tagline animate delay-1">
+                Are Getting Married
+            </p>
+
+            <!-- Scroll to photos -->
+            <a
+                href="#photos"
+                class="scroll-btn"
+                aria-label="Scroll to wedding photos"
+            >
+                <span
+                    class="scroll-indicator animate delay-2"
+                    aria-hidden="true"
+                >
+                    ↓
+                </span>
+            </a>
+
+        </section>
+
+
+        <!-- =========================================================
+             COUPLE PHOTOS
+             ========================================================= -->
+        <section
+            id="photos"
+            class="photos animate delay-1"
+            aria-labelledby="photos-title"
+        >
+
+            <h2 id="photos-title" class="visually-hidden">
+                Bride and Groom
+            </h2>
+
+            <!-- Groom -->
+            <div class="photo-card animate delay-2">
+
+                <img
+                    src="images/Grooms.jpg"
+                    alt="Photo of the groom"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <h3>Groom</h3>
+
+            </div>
+
+
+            <!-- Decorative ampersand -->
+            <div
+                class="amp animate delay-3"
+                aria-hidden="true"
+            >
+                &amp;
+            </div>
+
+
+            <!-- Bride -->
+            <div class="photo-card animate delay-4">
+
+                <img
+                    src="images/bride.jpg"
+                    alt="Photo of the bride"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <h3>Bride</h3>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             WEDDING DETAILS
+             ========================================================= -->
+        <section
+            class="details animate delay-1"
+            aria-labelledby="invitation-title"
+        >
+
+            <h2 id="invitation-title">
+                Wedding Invitation
+            </h2>
+
+
+            <p class="subtext">
+                With the blessings of our beloved parents,<br>
+                we joyfully invite you to celebrate our special day.
+            </p>
+
+
+            <!-- =====================================================
+                 PARENTS
+                 ===================================================== -->
+            <div class="info-box animate delay-1">
+
+                <h3 class="info-title">
+                    Parents
+                </h3>
+
+                <p>
+                    <strong>Groom's Parents:</strong><br>
+                    Groom Father's Name &amp; Groom Mother's Name
+                </p>
+
+                <p>
+                    <strong>Bride's Parents:</strong><br>
+                    Bride Father's Name &amp; Bride Mother's Name
+                </p>
+
+            </div>
+
+
+            <!-- =====================================================
+                 WEDDING DATE & TIME
+                 ===================================================== -->
+            <div class="info-box animate delay-2">
+
+                <h3 class="info-title">
+                    Muhurtham
+                </h3>
+
+                <!--
+                    datetime should be updated by the customer
+                    when customizing the template.
+                -->
+                <p>
+                    <time datetime="2026-12-20">
+                        20 December 2026
+                    </time>
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    <time datetime="10:30">
+                        10:30 AM
+                    </time>
+                    –
+                    <time datetime="12:00">
+                        12:00 PM
+                    </time>
+                </p>
+
+            </div>
+
+
+            <!-- =====================================================
+                 VENUE
+                 ===================================================== -->
+            <div class="info-box animate delay-3">
+
+                <h3 class="info-title">
+                    Venue
+                </h3>
+
+                <p>
+                    Crystal Palace Banquet Hall
+                </p>
+
+                <p>
+                    <strong>Location:</strong><br>
+                    Mumbai, Maharashtra
+                </p>
+
+                <!--
+                    Replace the URL with the actual Google Maps
+                    location when customizing the invitation.
+                -->
+                <p>
+                    <a
+                        href="https://maps.google.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View wedding venue on Google Maps"
+                    >
+                        View Location
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- =====================================================
+                 COUNTDOWN
+                 ===================================================== -->
+            <h3 class="animate delay-3">
+                Countdown
+            </h3>
+
+            <div
+                class="countdown-wrapper show"
+                id="countdown"
+                aria-label="Countdown to the wedding"
+                role="timer"
+            >
+
+                <!-- Days -->
+                <div class="time-box">
+
+                    <span
+                        id="d"
+                        aria-label="Days remaining"
+                    >
+                        00
+                    </span>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+
+                <!-- Hours -->
+                <div class="time-box">
+
+                    <span
+                        id="h"
+                        aria-label="Hours remaining"
+                    >
+                        00
+                    </span>
+
+                    <small>
+                        Hours
+                    </small>
+
+                </div>
+
+
+                <!-- Minutes -->
+                <div class="time-box">
+
+                    <span
+                        id="m"
+                        aria-label="Minutes remaining"
+                    >
+                        00
+                    </span>
+
+                    <small>
+                        Minutes
+                    </small>
+
+                </div>
+
+
+                <!-- Seconds -->
+                <div class="time-box">
+
+                    <span
+                        id="s"
+                        aria-label="Seconds remaining"
+                    >
+                        00
+                    </span>
+
+                    <small>
+                        Seconds
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>

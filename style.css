@@ -1,0 +1,1532 @@
+/* =========================================================
+   PREMIUM WEDDING INVITATION
+   Main Stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONTS
+   ========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap'
+);
+
+
+/* =========================================================
+   DESIGN SYSTEM / CUSTOMIZATION VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* Typography */
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Primary Colors */
+    --color-primary: #c4147a;
+    --color-primary-dark: #a60067;
+    --color-primary-light: #ff74c6;
+
+    /* Secondary Colors */
+    --color-purple: #a463ff;
+    --color-purple-light: #b46bff;
+
+    /* Text */
+    --color-text: #444;
+    --color-text-light: #666;
+    --color-heading: #b40079;
+
+    /* Background */
+    --color-background: #fff0f6;
+    --color-white: #ffffff;
+
+    /* Borders */
+    --color-border: #ffb6da;
+
+    /* Shadows */
+    --shadow-soft:
+        0 8px 30px rgba(170, 0, 93, 0.12);
+
+    --shadow-medium:
+        0 12px 35px rgba(170, 0, 93, 0.18);
+
+    --shadow-image:
+        0 10px 30px rgba(255, 140, 211, 0.35);
+
+    /* Radius */
+    --radius-small: 12px;
+    --radius-medium: 18px;
+    --radius-large: 24px;
+    --radius-round: 999px;
+
+    /* Layout */
+    --content-width: 900px;
+
+    /* Animation */
+    --transition-fast: 0.25s ease;
+    --transition-medium: 0.4s ease;
+    --transition-slow: 0.9s ease;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+
+    color: var(--color-text);
+
+    background-color: var(--color-background);
+
+    /*
+        Main background image.
+        Keep this file inside:
+        assets/images/background.jpg
+    */
+    background-image:
+        linear-gradient(
+            rgba(255, 240, 246, 0.78),
+            rgba(255, 240, 246, 0.78)
+        ),
+        url("assets/images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+/* Remove default spacing */
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Links */
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-purple);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   BACKGROUND GRADIENT GLOW
+   ========================================================= */
+
+.bg-gradient {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255, 123, 149, 0.35),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 158, 166, 0.35),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.35),
+            transparent 60%
+        );
+}
+
+
+/* =========================================================
+   FLORAL FRAME DECORATIONS
+   ========================================================= */
+
+.frame-top,
+.frame-bottom {
+    position: fixed;
+
+    left: 0;
+
+    width: 100%;
+
+    max-width: 100vw;
+
+    height: auto;
+
+    opacity: 0.62;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(
+            0 5px 15px rgba(180, 0, 121, 0.08)
+        );
+}
+
+
+.frame-top {
+    top: 0;
+
+    transform: rotate(180deg);
+}
+
+
+.frame-bottom {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+    position: relative;
+
+    width: 100%;
+    max-width: var(--content-width);
+
+    margin: 0 auto;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        100px
+        20px
+        50px;
+
+    position: relative;
+}
+
+
+/* Couple names */
+
+.couple-names {
+    margin: 0;
+
+    max-width: 900px;
+
+    font-family: var(--font-script);
+
+    font-size: clamp(
+        48px,
+        8vw,
+        82px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    letter-spacing: 1px;
+
+    color: var(--color-primary);
+
+    text-shadow:
+        0 5px 20px rgba(255, 184, 243, 0.85);
+
+    text-wrap: balance;
+}
+
+
+/* Heart */
+
+.couple-names span {
+    display: inline-block;
+
+    margin: 0 8px;
+
+    font-family: sans-serif;
+
+    font-size: 0.42em;
+
+    vertical-align: middle;
+
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+
+/* Hero tagline */
+
+.tagline {
+    margin:
+        18px
+        0
+        0;
+
+    font-size: clamp(
+        13px,
+        2vw,
+        17px
+    );
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: var(--color-text-light);
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+   ========================================================= */
+
+.scroll-btn {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-top: 35px;
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        rgba(196, 20, 122, 0.2);
+
+    border-radius: var(--radius-round);
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(170, 0, 93, 0.12);
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium),
+        background var(--transition-medium);
+}
+
+
+.scroll-btn:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 12px 30px
+        rgba(170, 0, 93, 0.2);
+}
+
+
+.scroll-indicator {
+    display: inline-block;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    color: var(--color-primary);
+
+    animation:
+        bounce 1.6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   COUPLE PHOTOS
+   ========================================================= */
+
+.photos {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding:
+        70px
+        20px;
+
+    text-align: center;
+}
+
+
+/* Individual photo card */
+
+.photo-card {
+    position: relative;
+
+    text-align: center;
+
+    transition:
+        transform var(--transition-medium);
+}
+
+
+.photo-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Photo */
+
+.photo-card img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border:
+        4px solid
+        rgba(255, 182, 218, 0.95);
+
+    border-radius: 50%;
+
+    background: var(--color-white);
+
+    box-shadow:
+        var(--shadow-image);
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
+}
+
+
+.photo-card:hover img {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 16px 40px
+        rgba(255, 140, 211, 0.42);
+}
+
+
+/* Photo name */
+
+.photo-card h3 {
+    margin:
+        14px
+        0
+        0;
+
+    font-family: var(--font-script);
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: var(--color-heading);
+}
+
+
+/* Ampersand */
+
+.amp {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    font-family: var(--font-script);
+
+    font-size: 52px;
+
+    color: var(--color-purple);
+
+    text-shadow:
+        0 5px 20px
+        rgba(164, 99, 255, 0.25);
+}
+
+
+/* =========================================================
+   DETAILS SECTION
+   ========================================================= */
+
+.details {
+    width: 100%;
+
+    padding:
+        70px
+        20px
+        120px;
+
+    text-align: center;
+}
+
+
+/* Main heading */
+
+.details h2 {
+    margin-bottom: 18px;
+
+    font-family: var(--font-script);
+
+    font-size: clamp(
+        42px,
+        7vw,
+        64px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: var(--color-primary);
+
+    text-shadow:
+        0 5px 20px
+        rgba(255, 184, 243, 0.65);
+}
+
+
+/* Invitation text */
+
+.subtext {
+    max-width: 560px;
+
+    margin:
+        0
+        auto
+        40px;
+
+    font-size: 15px;
+
+    font-weight: 300;
+
+    line-height: 1.9;
+
+    color: var(--color-text-light);
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+   ========================================================= */
+
+.info-box {
+    width: min(
+        100%,
+        420px
+    );
+
+    margin:
+        22px
+        auto;
+
+    padding:
+        28px
+        25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(196, 20, 122, 0.1);
+
+    border-radius:
+        var(--radius-large);
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
+}
+
+
+/* Decorative top glow */
+
+.info-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 70px;
+    height: 3px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        0 0
+        10px
+        10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-primary-light),
+            var(--color-purple-light)
+        );
+}
+
+
+.info-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        var(--shadow-medium);
+}
+
+
+/* Information title */
+
+.info-title {
+    margin:
+        0
+        0
+        14px;
+
+    font-family: var(--font-script);
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: var(--color-primary);
+}
+
+
+/* Information paragraphs */
+
+.info-box p {
+    margin:
+        8px
+        0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--color-text);
+}
+
+
+.info-box strong {
+    font-weight: 600;
+
+    color: var(--color-primary-dark);
+}
+
+
+/* Venue location link */
+
+.info-box a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 10px;
+
+    padding:
+        9px
+        18px;
+
+    border:
+        1px solid
+        rgba(196, 20, 122, 0.2);
+
+    border-radius:
+        var(--radius-round);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: var(--color-primary);
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.info-box a:hover {
+    color: var(--color-white);
+
+    background:
+        var(--color-primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   COUNTDOWN TITLE
+   ========================================================= */
+
+.details > h3 {
+    margin:
+        55px
+        0
+        5px;
+
+    font-family: var(--font-script);
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    color: var(--color-primary);
+}
+
+
+/* =========================================================
+   COUNTDOWN WRAPPER
+   ========================================================= */
+
+.countdown-wrapper {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   COUNTDOWN TIME BOX
+   ========================================================= */
+
+.time-box {
+    width: 82px;
+
+    min-height: 88px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding:
+        12px
+        8px;
+
+    border:
+        1px solid
+        rgba(196, 20, 122, 0.12);
+
+    border-radius:
+        var(--radius-medium);
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 7px 25px
+        rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.time-box:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(170, 0, 93, 0.15);
+}
+
+
+/* Countdown number */
+
+.time-box span {
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: var(--color-heading);
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+
+/* Countdown label */
+
+.time-box small {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    color: var(--color-text-light);
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    padding:
+        12px
+        26px;
+
+    border: none;
+
+    border-radius:
+        var(--radius-round);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primary-light),
+            var(--color-purple-light)
+        );
+
+    color:
+        var(--color-white);
+
+    font-family:
+        var(--font-body);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(180, 107, 255, 0.25);
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(180, 107, 255, 0.35);
+}
+
+
+.btn:active {
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   POPUP
+   ========================================================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+.popup.show {
+    display: flex;
+}
+
+
+/* Popup content */
+
+.popup-content {
+    width: min(
+        100%,
+        380px
+    );
+
+    padding:
+        30px
+        25px;
+
+    text-align: center;
+
+    border-radius:
+        var(--radius-large);
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.2);
+
+    animation:
+        popupIn 0.35s ease-out;
+}
+
+
+/* Popup input */
+
+.popup-content input {
+    width: 100%;
+
+    padding:
+        12px
+        14px;
+
+    margin:
+        8px
+        0;
+
+    border:
+        1px solid
+        #ddd;
+
+    border-radius:
+        var(--radius-small);
+
+    outline: none;
+
+    font-family:
+        var(--font-body);
+
+    font-size: 14px;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.popup-content input:focus {
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(196, 20, 122, 0.1);
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+   ========================================================= */
+
+.animate {
+    opacity: 0;
+
+    transform:
+        translateY(40px)
+        scale(0.97);
+
+    transition:
+        opacity var(--transition-slow),
+        transform var(--transition-slow);
+}
+
+
+.animate.show {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* Animation delays */
+
+.delay-1 {
+    transition-delay: 0.15s;
+}
+
+
+.delay-2 {
+    transition-delay: 0.30s;
+}
+
+
+.delay-3 {
+    transition-delay: 0.45s;
+}
+
+
+.delay-4 {
+    transition-delay: 0.60s;
+}
+
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+   ========================================================= */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(9px);
+    }
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+
+    .hero {
+        min-height: 90vh;
+
+        padding:
+            90px
+            20px
+            40px;
+    }
+
+
+    .photos {
+        gap: 20px;
+
+        padding:
+            50px
+            15px;
+    }
+
+
+    .photo-card img {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    .photo-card h3 {
+        font-size: 32px;
+    }
+
+
+    .amp {
+        width: 45px;
+        height: 45px;
+
+        font-size: 42px;
+    }
+
+
+    .details {
+        padding:
+            50px
+            15px
+            100px;
+    }
+
+
+    .info-box {
+        max-width: 390px;
+    }
+
+
+    .frame-top,
+    .frame-bottom {
+        opacity: 0.48;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .hero {
+        min-height: 88vh;
+
+        padding:
+            80px
+            15px
+            35px;
+    }
+
+
+    .couple-names {
+        font-size: clamp(
+            44px,
+            14vw,
+            62px
+        );
+    }
+
+
+    .couple-names span {
+        margin:
+            0 3px;
+    }
+
+
+    .tagline {
+        margin-top: 15px;
+
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .scroll-btn {
+        width: 48px;
+        height: 48px;
+
+        margin-top: 28px;
+    }
+
+
+    .scroll-indicator {
+        font-size: 25px;
+    }
+
+
+    /* Couple photos */
+
+    .photos {
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding:
+            45px
+            15px;
+    }
+
+
+    .photo-card img {
+        width: 145px;
+        height: 145px;
+    }
+
+
+    .photo-card h3 {
+        font-size: 30px;
+
+        margin-top: 10px;
+    }
+
+
+    .amp {
+        width: auto;
+        height: auto;
+
+        margin:
+            3px
+            0;
+
+        font-size: 38px;
+    }
+
+
+    /* Details */
+
+    .details {
+        padding:
+            45px
+            15px
+            80px;
+    }
+
+
+    .details h2 {
+        font-size: 46px;
+    }
+
+
+    .subtext {
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    /* Information cards */
+
+    .info-box {
+        width: 100%;
+
+        padding:
+            25px
+            18px;
+
+        border-radius:
+            var(--radius-medium);
+    }
+
+
+    .info-title {
+        font-size: 31px;
+    }
+
+
+    .info-box p {
+        font-size: 13px;
+    }
+
+
+    /* Countdown */
+
+    .details > h3 {
+        font-size: 36px;
+
+        margin-top: 45px;
+    }
+
+
+    .countdown-wrapper {
+        gap: 7px;
+    }
+
+
+    .time-box {
+        width: calc(
+            25% - 6px
+        );
+
+        min-width: 68px;
+
+        min-height: 78px;
+
+        padding:
+            10px
+            5px;
+
+        border-radius:
+            13px;
+    }
+
+
+    .time-box span {
+        font-size: 25px;
+    }
+
+
+    .time-box small {
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    /* Floral decoration */
+
+    .frame-top,
+    .frame-bottom {
+        width: 130%;
+
+        max-width: none;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(180deg);
+
+        opacity: 0.4;
+    }
+
+
+    .frame-bottom {
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .couple-names {
+        font-size: 42px;
+    }
+
+
+    .photo-card img {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .time-box {
+        min-width: 62px;
+    }
+
+
+    .time-box span {
+        font-size: 22px;
+    }
+
+
+    .time-box small {
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   Accessibility:
+   Respect users who prefer reduced motion.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+
+    .animate {
+        opacity: 1;
+
+        transform:
+            none;
+    }
+}
+
